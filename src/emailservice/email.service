@@ -1,0 +1,15 @@
+[Unit]
+Description=Payment Service
+
+[Service]
+
+WorkingDirectory=/home/botique/emailservice
+
+Environment=PYTHONUNBUFFERED=1
+Environment=ENABLE_PROFILER=1
+
+ExecStart=/usr/bin/python3 email_server.py
+SyslogIdentifier=emailservice
+
+[Install]
+WantedBy=multi-user.target
